@@ -103,21 +103,7 @@ li a:hover, .dropdown:hover .dropbtn {
 								</div>
 						</div>
 						<div style="padding: 20px"></div>
-						<div class="inner">
-							<!-- 2 Columns -->
-								<div class="flex flex-2">
-									<div class="col col1">
-										<div class="image round fit" style="width: 250px; height: 250px;">
-											<a href="generic.html" class="link"><img src="images/aayushi.jpeg" alt="" style="width: 250px; height: 250px;" /></a>
-										</div>
-									</div>
-									<div class="col col2">
-										<h3>Aayushi Bhimani</h3>
-										<p style="text-align: justify;">The basic idea behind all this is to inspire thoughtful consumption of food before its expiration date and combines the topics of food safety and food waste to enable a transparent food system.We are an online platform that bridges the gap between hunger and surplus food. We are an online platform that bridges the gap between hunger and surplus food.</p>
-										
-									</div>
-								</div>
-						</div>
+						
 				</section>
 
 			</div>

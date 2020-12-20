@@ -51,6 +51,13 @@ class OrdersController extends Controller
     {
         // dd($request->all());
         $donation_id = $request->donation_id;
+        $order_qty = (int)$request->quantity;
+        $donation_qty = Donation::where('id', $donation_id)->get('quantity');
+        $qty = $donation_qty[0];
+        print($qty);
+        $qty = $qty->quantity;
+        $diff_qty = $qty-$order_qty;
+        echo "Difference:".$diff_qty;
         $order = Order::create([
             'donation_id'=>$request->donation_id,
             'orgname'=>$request->orgname,
@@ -58,8 +65,10 @@ class OrdersController extends Controller
             'orgcontact'=>$request->orgemail,
             'user_id'=>auth()->id()
         ]);
-
-        Donation::where('id',$donation_id)->update(['status'=>'taken']);
+        $status = '';
+        $status = $diff_qty<=0?'taken':'pending';
+        Donation::where('id',$donation_id)->update(['status'=>$status]);
+        Donation::where('id',$donation_id)->update(['quantity'=>$diff_qty]);
         
         auth()->user()->notify(new NewOrderPlaced($order));
 

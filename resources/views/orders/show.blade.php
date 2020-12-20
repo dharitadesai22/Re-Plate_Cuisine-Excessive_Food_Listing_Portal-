@@ -90,11 +90,13 @@ li a:hover, .dropdown:hover .dropbtn {
             <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Food Item : {{$details->item}}</label>
             <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Quantity : {{$details->quantity}}</label>
             <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Validity Period : {{$details->expiry}}</label>
+              <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Address : {{$details->address}}</label>
             </div>
             <div class="col-md-6"> 
            <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Donated By : {{$details->name}}</label>
            <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Email Id : {{$details->email}}</label>
             <label style="font-size: 1.2rem; color: black; margin-botton:0!important;">Contact no : {{$details->contact}}</label>
+
             </div>
            </div>
 
@@ -141,6 +143,19 @@ li a:hover, .dropdown:hover .dropbtn {
                             <p class="text-danger" style="color:red;">{{$message}}</p>
                         @enderror
                         </div>
+
+                        <div style="padding: 10px;"></div>
+                        <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="text"
+                                value="{{old('quantity')}}"
+                                class="form-control @error('quantity') is-invalid @enderror"
+                                name="quantity" id="quantity">
+                        @error('quantity')
+                            <p class="text-danger" style="color:red;">{{$message}}</p>
+                        @enderror
+                        </div>
+
                         <div style="padding: 10px;"></div>
                         <h3 style="margin-bottom: 0px;">Terms and Conditions</h3>
                           <p style="padding: 0px; margin: 0px;">*Order has to be picked up from the address mentioned.</p>

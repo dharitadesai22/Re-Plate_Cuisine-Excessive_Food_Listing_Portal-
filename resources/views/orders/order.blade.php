@@ -80,11 +80,13 @@ li a:hover, .dropdown:hover .dropbtn {
                     <div class="row">
                        @foreach($donations as $donation)
                        <div class="col-md-3">
-                            <div class="image fit" style="width: 270px; height: 280px;">
+                            <div class="image fit" style="width: 270px; height: 300px;">
                               <img src="{{asset('storage/'.$donation->image)}}" alt="" style="width: 270px; height: 200px;"/>
                                 <h4 style="text-align: left; margin: 0px;">{{$donation->item}}</h4>
                                 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+                                  <p style="padding: 0px; margin: 0px; text-align: left; font-size: 12px;">Quantity:  {{$donation->quantity}}</p>
                                 <p style="padding: 0px; margin: 0px; text-align: left; font-size: 18px;">{{$donation->city}}<i class='fas fa-map-marker-alt' style='font-size:18px; padding-right: 60px;'></i>
+
                                 <a href="{{route('order.show', $donation->id)}}" class="button" style="background: black; height: 40px; width: 80px; padding: 0px; line-height: 2.50em;">Order</a> </p>
                             </div>
                         </div>
